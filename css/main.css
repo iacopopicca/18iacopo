@@ -12004,15 +12004,16 @@ h5, .h5 {
 }
 
 .btn-orange {
-  border: 1px solid #ecac59;
-  color: #ecac59;
+  color: #634722;
+  background: #ecac59;
   border-radius: 6px;
   font-size: 18px;
-  width: 180px;
+  width: 120px;
 }
 
 .btn-orange:hover {
-  background: #ecac59;
+  border: 1px solid #ecac59;
+  background: none;
   color: #fff;
 }
 
@@ -12031,21 +12032,126 @@ h5, .h5 {
 
 .hero {
   min-height: 1000px;
-  background: url("../img/chitarra.jpeg") center center;
-  background-color: rgba(247, 235, 235, 0.589);
-  background-blend-mode: lighten;
+  background: url("../img/bg.jpeg") center center;
+  background-color: rgba(119, 119, 119, 0.192);
+  background-blend-mode: multiply;
   background-size: cover;
   position: relative;
+  -webkit-filter: blur(6px);
+          filter: blur(6px);
 }
 
 .hero-content {
-  padding-top: 40vh;
-  padding-bottom: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
   text-align: center;
 }
 
-.hero-content img {
+.hero-img img {
   height: auto;
   width: 400px;
   max-width: 90%;
+  -webkit-transform: rotate(340deg);
+          transform: rotate(340deg);
+}
+
+.hero-text {
+  margin-top: 30px;
+  font-size: large;
+  color: white;
+}
+
+.prod {
+  color: white;
+  min-width: 200 px;
+  overflow: hidden;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.prod .prod-grid {
+  text-align: center;
+  padding: 1rem 1rem 0 1rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.prod .prod-grid h4, .prod .prod-grid .h4 {
+  padding-top: 10px;
+}
+
+.prod .prod-grid img {
+  width: auto;
+  height: auto;
+  max-width: 200px;
+  max-height: 120px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-transform: rotate(340deg);
+          transform: rotate(340deg);
+}
+
+.prod .prod-buy {
+  padding: 0 1rem 1rem 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.prod .contributo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.prod .contributo .contr-label {
+  margin-right: 10px;
+}
+
+.prod .contributo .contr-input {
+  width: 120px;
+  padding: 6px;
+}
+
+.prod .progress-bar {
+  width: 25%;
+  background-color: #cc862a;
+}
+
+.prod:hover .prod-sold {
+  position: absolute;
+  z-index: -1;
+  display: none;
+}
+
+.prod:hover .prod-desc {
+  display: block;
+}
+
+.prod:hover img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }

@@ -41,13 +41,14 @@ h5 {
 }
 
 .btn-orange {
-  border: 1px solid rgb(236, 172, 89);
-  color: rgb(236, 172, 89);
+  color: rgb(99, 71, 34);
+  background: rgb(236, 172, 89);
   border-radius: 6px;
   font-size: 18px;
-  width: 180px;
+  width: 120px;
   &:hover {
-    background: rgb(236, 172, 89);
+    border: 1px solid rgb(236, 172, 89);
+    background: none;
     color: #fff;
   }
 }
@@ -68,22 +69,99 @@ $brown: rgb(161, 126, 29);
 // Hero
 .hero {
   min-height: 1000px;
-  background: url("../img/chitarra.jpeg") center center;
-  background-color: rgba(247, 235, 235, 0.589);
-  background-blend-mode: lighten;
+  background: url("../img/bg.jpeg") center center;
+  background-color: rgba(119, 119, 119, 0.192);
+  background-blend-mode: multiply;
   background-size: cover;
   position: relative;
+  filter: blur(6px);
+
   //   @media (max-width: 580px) {
   //     background-image: url("../img/ter_media.jpg");
   //   }
 }
 .hero-content {
-  padding-top: 40vh;
-  padding-bottom: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
   text-align: center;
+}
+.hero-img {
   img {
     height: auto;
     width: 400px;
     max-width: 90%;
+    transform: rotate(340deg);
+  }
+}
+.hero-text {
+  margin-top: 30px;
+  font-size: large;
+  color: white;
+}
+
+.prod {
+  color: white;
+  min-width: 200 px;
+  overflow: hidden;
+  transition: all 0.2s ease-in;
+  .prod-grid {
+    text-align: center;
+    padding: 1rem 1rem 0 1rem;
+    align-items: center;
+    h4 {
+      padding-top: 10px;
+    }
+    img {
+      width: auto;
+      height: auto;
+      max-width: 200px;
+      max-height: 120px;
+      object-fit: contain;
+      transition: all 0.5s ease;
+      transform: rotate(340deg);
+    }
+  }
+  .prod-buy {
+    padding: 0 1rem 1rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .contributo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .contr-label {
+      margin-right: 10px;
+    }
+    .contr-input {
+      width: 120px;
+      padding: 6px;
+    }
+  }
+
+  .progress-bar {
+    width: 25%;
+    background-color: rgb(204, 134, 42);
+  }
+  &:hover {
+    .prod-sold {
+      position: absolute;
+      z-index: -1;
+      display: none;
+    }
+    .prod-desc {
+      display: block;
+    }
+    img {
+      transform: scale(1.1);
+    }
   }
 }
