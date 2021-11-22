@@ -1,0 +1,32 @@
+// Fonts
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);
+@import url(https://fonts.googleapis.com/css?family=Merriweather:400,300,400italic,300italic,700,700italic);
+@import url(https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Nunito:400,300,700);
+@import url(https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap);
+
+$sans-serif: "Roboto", sans-serif;
+$serif: Merriweather, Georgia, "Times New Roman", serif;
+$accent-font: "Nunito", sans-serif;
+
+// Weights
+$w-light: 300;
+$w-normal: 400;
+$w-semibold: 500;
+$w-bold: 700;
+
+// Sizes
+$font-size-h1: 60px;
+$font-size-h2: 40px;
+$font-size-h3: 28px;
+$font-size-h4: 24px;
+$font-size-h5: 15px;
+$font-size-p: 15px;
+$nav-font-size: 13px;
+$blog-post-title: 11px;
+
+// Responsive Sizes
+$responsive-h1: 40px;
+
+// Line height
+$base-line-height: 29px;
