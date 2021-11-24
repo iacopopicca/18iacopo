@@ -10,33 +10,165 @@
   </head>
 
   <body>
-    <section>
+    <!-- MAIN PAGE -->
+    <section id="hero-page">
       <div class="hero"></div>
-      <div class="hero-content">
-        <div class="prod">
-          <div class="prod-grid">
-            <div class="foto">
-              <img class="prod-foto" src="img/chit.png" alt="" />
+      <div class="container hero-content">
+        <div class="row">
+          <h3>Non sai che regalo fare e non hai voglia di organizzarti?</h3>
+        </div>
+        <div class="row">
+          <h4>NESSUN PROBLEMA</h4>
+        </div>
+        <div class="row my-0 py-0">
+          <img class="bimbo" src="img/bimbo.png" alt="" />
+        </div>
+        <div class="row">
+          <h3>Regala una chitarra a questo povero bambino!</h3>
+        </div>
+
+        <div class="row">
+          <img class="chitarra" src="img/chit.png" alt="" />
+        </div>
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <div class="row">
+          <h2>Se ti va, contribuisci cliccando qui:</h2>
+        </div>
+        <div class="row">
+          <button id="contr-btn" class="btn btn-orange" data-bs-toggle="modal" data-bs-target="#contributo-modal">
+            <span class="svg-butt">Regala </span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gift" viewBox="0 0 16 16">
+              <path
+                d="M3 2.5a2.5 2.5 0 0 1 5 0 2.5 2.5 0 0 1 5 0v.006c0 .07 0 .27-.038.494H15a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v7.5a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 14.5V7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h2.038A2.968 2.968 0 0 1 3 2.506V2.5zm1.068.5H7v-.5a1.5 1.5 0 1 0-3 0c0 .085.002.274.045.43a.522.522 0 0 0 .023.07zM9 3h2.932a.56.56 0 0 0 .023-.07c.043-.156.045-.345.045-.43a1.5 1.5 0 0 0-3 0V3zM1 4v2h6V4H1zm8 0v2h6V4H9zm5 3H9v8h4.5a.5.5 0 0 0 .5-.5V7zm-7 8V7H2v7.5a.5.5 0 0 0 .5.5H7z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODALS -->
+    <section id="cart-row-and-modal">
+      <!-- contributo modal -->
+      <div class="modal fade" id="contributo-modal" tabindex="-1" aria-labelledby="contributo-modal-label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Chitarra</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <h4 class="prod-name">Contribuisci alla chitarra</h4>
-            <span>Se ti va contribuisci a comprarmi una chitarra grz tvb prova</span>
-            <div class="progress my-4">
-              <div class="progress-bar" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="modal-body contributo">
+              <p class="contr-label">Inserisci qui il tuo contributo:</p>
+              <input type="number" class="form-control prod-price contr-input" placeholder="0" aria-label="contrib" required />
             </div>
-            <div class="prod-buy mt-4">
-              <div class="col-md-4 pb-2 contributo">
-                <span class="contr-label">Contributo: </span>
-                <input type="number" class="form-control prod-price contr-input" placeholder="0" aria-label="contrib" required />
+            <div class="modal-footer my-cart-buttons">
+              <button
+                id="go-payment"
+                type="button"
+                class="btn btn-regala-fill"
+                data-bs-dismiss="modal"
+                data-bs-toggle="modal"
+                data-bs-target="#checkout-modal"
+              >
+                <span class="svg-butt">Regala!</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-gift-fill" viewBox="0 0 16 16">
+                  <path
+                    d="M3 2.5a2.5 2.5 0 0 1 5 0 2.5 2.5 0 0 1 5 0v.006c0 .07 0 .27-.038.494H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h2.038A2.968 2.968 0 0 1 3 2.506V2.5zm1.068.5H7v-.5a1.5 1.5 0 1 0-3 0c0 .085.002.274.045.43a.522.522 0 0 0 .023.07zM9 3h2.932a.56.56 0 0 0 .023-.07c.043-.156.045-.345.045-.43a1.5 1.5 0 0 0-3 0V3zm6 4v7.5a1.5 1.5 0 0 1-1.5 1.5H9V7h6zM2.5 16A1.5 1.5 0 0 1 1 14.5V7h6v9H2.5z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- checkout-form -->
+      <div class="modal fade" id="checkout-modal" tabindex="-1" aria-labelledby="checkout-modal-label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Chitarra</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form
+                id="checkout-form"
+                method="POST"
+                action="https://script.google.com/macros/s/AKfycbyvku580rPv3k7pwzOSkeuyes_Jh67U83a043SjQM7VwLREY-A/exec"
+              >
+                <div class="container mb-3">
+                  <div class="form-elements">
+                    <div class="row mb-3">
+                      <label for="email" class="col-sm-2 col-form-label">Email</label>
+                      <div class="col-sm-10">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Inserisci la tua email" required />
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <label for="nome" class="col-sm-4 col-form-label">Nome e Cognome</label>
+                      <div class="col-sm-8">
+                        <input class="form-control" id="nome" name="nome" placeholder="Nome e cognome" required />
+                      </div>
+                    </div>
+                    <div class="row mb-3">
+                      <label for="messaggio" class="form-label">Inserisci un messaggio:</label>
+                      <textarea class="form-control" id="messaggio" name="messaggio" rows="3" placeholder="Scrivi qualcosa..."></textarea>
+                    </div>
+                    <div class="row mb-3">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="metodo" id="radio-bonifico" value="bonifico" checked />
+                        <label class="form-check-label" for="radio-bonifico"> Bonifico </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="metodo" id="radio-paypal" value="paypal" />
+                        <label class="form-check-label" for="radio-paypal"> Paypal </label>
+                      </div>
+                    </div>
+                    <div class="confirm-body" style="display: none">
+                      Hai scelto di utilizzare <span class="method-confirm" style="font-style: italic">Bonifico</span>. Vuoi continuare? <br />
+                      Così facendo confermerai la tua scelta!
+                    </div>
+                  </div>
+                </div>
+              </form>
+              <div class="container thankyou_message_cart py-2" style="display: none">
+                Vi ringrazio per il vostro contributo! <br />
+                Un'email di conferma vi arriverà all'indirizzo inserito. <br />
+                Avete scelto di pagare tramite <span class="method-confirm">Bonifico</span>.
+                <div class="scelta-box">
+                  <div class="container scelta-bonifico py-3">
+                    Ecco le coordinate bancarie: <br />
+                    <div class="text-center">
+                      Intestato a: Piccaluga Iacopo <br />
+                      IBAN: XXXXXXXXXXXXXX
+                    </div>
+                  </div>
+                  <div class="container scelta-paypal py-3" style="display: none">
+                    Potete procedere al pagamento al seguente link: <a href="https://paypal.me/provaprova">paypal.me/provaprova</a>.
+                  </div>
+                </div>
+                Per qualsiasi cosa scrivetemi pure!
               </div>
-              <div class="col-md-4 pb-2">
-                <button class="btn btn-orange add-cart col-md-4">
-                  <span class="svg-butt">Regala </span>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gift" viewBox="0 0 16 16">
-                    <path
-                      d="M3 2.5a2.5 2.5 0 0 1 5 0 2.5 2.5 0 0 1 5 0v.006c0 .07 0 .27-.038.494H15a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v7.5a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 14.5V7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h2.038A2.968 2.968 0 0 1 3 2.506V2.5zm1.068.5H7v-.5a1.5 1.5 0 1 0-3 0c0 .085.002.274.045.43a.522.522 0 0 0 .023.07zM9 3h2.932a.56.56 0 0 0 .023-.07c.043-.156.045-.345.045-.43a1.5 1.5 0 0 0-3 0V3zM1 4v2h6V4H1zm8 0v2h6V4H9zm5 3H9v8h4.5a.5.5 0 0 0 .5-.5V7zm-7 8V7H2v7.5a.5.5 0 0 0 .5.5H7z"
-                    />
-                  </svg>
+            </div>
+            <div class="modal-footer my-cart-buttons">
+              <div class="checkout-btn">
+                <button
+                  id="back-to-cart"
+                  type="button"
+                  class="btn btn-ricom"
+                  data-bs-dismiss="modal"
+                  data-bs-toggle="modal"
+                  data-bs-target="#my-cart-modal"
+                >
+                  Indietro
                 </button>
+                <button id="go-checkout" class="btn btn-regala-fill" onclick="confirmfinish();">Conferma</button>
+              </div>
+              <div class="confirm-btn" style="display: none">
+                <button type="button" class="btn btn-ricom" onclick="confirm_no();">No</button>
+                <button type="submit" form="checkout-form" class="btn btn-regala-fill">Si!</button>
               </div>
             </div>
           </div>
@@ -54,7 +186,7 @@
             <a href="mailto:iacopo.picca@gmail.com">iacopo.picca@gmail.com</a>
           </div>
     </footer> -->
-
+    <script src="js/contributo.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

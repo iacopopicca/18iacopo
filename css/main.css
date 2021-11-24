@@ -11962,8 +11962,14 @@ fieldset:disabled .btn {
   }
 }
 
-body {
-  background-color: whitesmoke;
+body,
+html {
+  height: 100%;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .container {
@@ -11973,7 +11979,7 @@ body {
 p {
   font-size: 15px;
   line-height: 29px;
-  color: #3d4351;
+  color: whitesmoke;
 }
 
 h1, .h1 {
@@ -11981,25 +11987,26 @@ h1, .h1 {
 }
 
 h2, .h2 {
-  font-size: 40px;
-  font-weight: 300;
-  color: #3d4351;
+  font-size: 16px;
+  color: whitesmoke;
 }
 
 h3, .h3 {
-  color: #3d4351;
-  font-size: 28px;
+  color: whitesmoke;
+  font-size: 18px;
   font-weight: 500;
   line-height: 29px;
 }
 
 h4, .h4 {
-  font-size: 24px;
+  font-size: 20px;
+  color: whitesmoke;
+  font-weight: 700;
 }
 
 h5, .h5 {
   font-size: 15px;
-  color: #3d4351;
+  color: #1b1a1a;
   font-weight: 700;
 }
 
@@ -12014,7 +12021,7 @@ h5, .h5 {
 .btn-orange:hover {
   border: 1px solid #ecac59;
   background: none;
-  color: #fff;
+  color: whitesmoke;
 }
 
 .btn-brown {
@@ -12031,7 +12038,7 @@ h5, .h5 {
 }
 
 .hero {
-  min-height: 1000px;
+  min-height: 1500px;
   background: url("../img/bg.jpeg") center center;
   background-color: rgba(119, 119, 119, 0.192);
   background-blend-mode: multiply;
@@ -12043,115 +12050,127 @@ h5, .h5 {
 
 .hero-content {
   position: absolute;
-  top: 50%;
+  top: 70%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   z-index: 2;
-  width: 80%;
+  overflow: hidden;
+  width: 90%;
   padding: 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
   text-align: center;
-}
-
-.hero-img img {
-  height: auto;
-  width: 400px;
-  max-width: 90%;
-  -webkit-transform: rotate(340deg);
-          transform: rotate(340deg);
-}
-
-.hero-text {
-  margin-top: 30px;
-  font-size: large;
-  color: white;
-}
-
-.prod {
   color: white;
   min-width: 200 px;
   overflow: hidden;
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
-}
-
-.prod .prod-grid {
-  text-align: center;
-  padding: 1rem 1rem 0 1rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-.prod .prod-grid h4, .prod .prod-grid .h4 {
-  padding-top: 10px;
+.hero-content .row {
+  margin: 5px;
+  padding: 5px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.prod .prod-grid img {
+.hero-content img {
   width: auto;
   height: auto;
-  max-width: 200px;
-  max-height: 120px;
+  max-height: 400px;
   -o-object-fit: contain;
      object-fit: contain;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
+  max-width: 100%;
+}
+
+.hero-content .chitarra {
   -webkit-transform: rotate(340deg);
           transform: rotate(340deg);
+  margin-bottom: 10px;
 }
 
-.prod .prod-buy {
-  padding: 0 1rem 1rem 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.prod .contributo {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.prod .contributo .contr-label {
-  margin-right: 10px;
-}
-
-.prod .contributo .contr-input {
-  width: 120px;
-  padding: 6px;
-}
-
-.prod .progress-bar {
+.hero-content .progress-bar {
   width: 25%;
   background-color: #cc862a;
 }
 
-.prod:hover .prod-sold {
+.hero-content:hover .prod-sold {
   position: absolute;
   z-index: -1;
   display: none;
 }
 
-.prod:hover .prod-desc {
+.hero-content:hover .prod-desc {
   display: block;
 }
 
-.prod:hover img {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+.hero-content:hover .chitarra {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.contributo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.contributo .contr-label {
+  margin-right: 1rem;
+  color: #1b1a1a;
+}
+
+.contributo .contr-input {
+  width: 60px;
+  padding: 6px;
+}
+
+.my-cart-buttons .btn {
+  color: #fff;
+  height: 40px;
+}
+
+.my-cart-buttons .btn-ricom {
+  background: #b4b4b4;
+  border-radius: 6px;
+}
+
+.my-cart-buttons .btn-ricom:hover {
+  background: #747474;
+}
+
+.my-cart-buttons .btn-regala-fill {
+  background: #ecac59;
+  border-radius: 6px;
+}
+
+.my-cart-buttons .btn-regala-fill:hover {
+  background: #d68a26;
+}
+
+.my-cart-buttons svg {
+  margin-left: 3px;
+  width: 1.2rem;
+  fill: #fff;
+  height: 1.2rem;
 }

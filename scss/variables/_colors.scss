@@ -13,13 +13,14 @@ $accent-color: #e8ca6f;
 // global accent colour
 $accent-color-hover: #d3b56a;
 // global accent colour hover
-$white-color: #fff;
-$black-color: #000;
+$white-color: whitesmoke;
+$black-color: rgb(27, 26, 26);
 // Typography colours
-$h2-color: #3d4351;
-$h3-color: #3d4351;
-$h5-color: #3d4351;
-$p-color: #3d4351;
+$h2-color: $white-color;
+$h3-color: $white-color;
+$h4-color: $white-color;
+$h5-color: $black-color;
+$p-color: $white-color;
 // Layout colours
 $section-light: #fff;
 $section-dark: #f8f9fd;
