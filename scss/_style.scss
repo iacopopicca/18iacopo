@@ -77,13 +77,16 @@ $brown: rgb(161, 126, 29);
 
 // Hero
 .hero {
-  min-height: 1500px;
+  min-height: 1200px;
   background: url("../img/bg.jpeg") center center;
   background-color: rgba(119, 119, 119, 0.192);
   background-blend-mode: multiply;
   background-size: cover;
   position: relative;
   filter: blur(6px);
+  @media (max-width: 540px) {
+    min-height: 1000px;
+  }
 }
 .hero-content {
   position: absolute;
@@ -102,6 +105,10 @@ $brown: rgb(161, 126, 29);
   overflow: hidden;
   transition: all 0.2s ease-in;
   align-items: center;
+  @media (max-width: 540px) {
+    top: 50%;
+  }
+
   .row {
     margin: 5px;
     padding: 5px;
@@ -118,7 +125,7 @@ $brown: rgb(161, 126, 29);
     max-width: 100%;
   }
   .chitarra {
-    transform: rotate(340deg);
+    transform: rotate(350deg);
     margin-bottom: 10px;
   }
   .progress-bar {

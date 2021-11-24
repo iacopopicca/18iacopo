@@ -11987,19 +11987,19 @@ h1, .h1 {
 }
 
 h2, .h2 {
-  font-size: 16px;
+  font-size: 20px;
   color: whitesmoke;
 }
 
 h3, .h3 {
   color: whitesmoke;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 500;
   line-height: 29px;
 }
 
 h4, .h4 {
-  font-size: 20px;
+  font-size: 24px;
   color: whitesmoke;
   font-weight: 700;
 }
@@ -12038,7 +12038,7 @@ h5, .h5 {
 }
 
 .hero {
-  min-height: 1500px;
+  min-height: 1200px;
   background: url("../img/bg.jpeg") center center;
   background-color: rgba(119, 119, 119, 0.192);
   background-blend-mode: multiply;
@@ -12046,6 +12046,12 @@ h5, .h5 {
   position: relative;
   -webkit-filter: blur(6px);
           filter: blur(6px);
+}
+
+@media (max-width: 540px) {
+  .hero {
+    min-height: 1000px;
+  }
 }
 
 .hero-content {
@@ -12071,6 +12077,12 @@ h5, .h5 {
           align-items: center;
 }
 
+@media (max-width: 540px) {
+  .hero-content {
+    top: 50%;
+  }
+}
+
 .hero-content .row {
   margin: 5px;
   padding: 5px;
@@ -12094,8 +12106,8 @@ h5, .h5 {
 }
 
 .hero-content .chitarra {
-  -webkit-transform: rotate(340deg);
-          transform: rotate(340deg);
+  -webkit-transform: rotate(350deg);
+          transform: rotate(350deg);
   margin-bottom: 10px;
 }
 
