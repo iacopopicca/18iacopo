@@ -24,9 +24,10 @@ function init() {
 
 // CHECKOUT
 function retrieveContributo() {
+  var priceList = {};
   var price = document.getElementsByClassName("prod-price")[0].value;
-  price = parseFloat(price);
-  return price;
+  priceList["contributo"] = parseFloat(price);
+  return priceList;
 }
 
 function getFormData(form) {
@@ -61,9 +62,9 @@ function getFormData(form) {
     }
   });
   // retrieve contributo
-  price = Object.assign(formData, retrieveContributo());
-  console.log(price);
-  return { data: price };
+  formData = Object.assign(formData, retrieveContributo());
+  console.log(formData);
+  return { data: formData };
 }
 
 function handleFormSubmit(event) {
@@ -72,9 +73,7 @@ function handleFormSubmit(event) {
   var form = event.target;
   var formData = getFormData(form);
   var data = formData.data;
-
   disableAllButtons("confirm-btn");
-  emptyCartAfterPurch();
   var url = form.action;
   var xhr = new XMLHttpRequest();
   xhr.open("POST", url);
@@ -87,15 +86,10 @@ function handleFormSubmit(event) {
       if (formElements) {
         formElements.style.display = "none"; // hide form
       }
-      var thankYouMessage = document.querySelector(".thankyou_message_cart");
+      var thankYouMessage = document.querySelector(".thankyou_message");
       if (thankYouMessage) {
-        confetti.start(6000, 20, 100);
+        // confetti.start(6000, 20, 100);
         thankYouMessage.style.display = "block";
-      }
-      var thankYouMessageMerl = document.querySelector(".thankyou_message_merl");
-      if (thankYouMessageMerl) {
-        confetti.start(6000, 20, 100);
-        thankYouMessageMerl.style.display = "block";
       }
     }
   };
