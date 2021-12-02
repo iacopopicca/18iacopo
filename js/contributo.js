@@ -3,11 +3,14 @@ var contributo;
 window.addEventListener("DOMContentLoaded", init);
 
 function init() {
-  contributo = document.getElementById("contributo-modal");
-
   enableIdBtn("contr-btn");
 
   // EVENT LISTENERS
+
+  // contributo
+  var regala = document.getElementById("go-payment");
+  console.log(regala);
+  regala.addEventListener("click", retrieveContributo, false);
 
   // checkout
   var ch_forms = document.querySelectorAll("#checkout-form");
@@ -24,10 +27,15 @@ function init() {
 
 // CHECKOUT
 function retrieveContributo() {
-  var priceList = {};
+  // var priceList = {};
   var price = document.getElementsByClassName("prod-price")[0].value;
-  priceList["contributo"] = parseFloat(price);
-  return priceList;
+  contributo = parseFloat(price);
+  console.log(contributo);
+  contr_forms = document.getElementsByClassName("contr-form");
+  for (var i = 0; i < contr_forms.length; i++) contr_forms[i].innerHTML = `${contributo} €`;
+
+  // priceList["contributo"] = parseFloat(price);
+  // return priceList;
 }
 
 function getFormData(form) {
@@ -61,8 +69,8 @@ function getFormData(form) {
       formData[name] = data.join(", ");
     }
   });
-  // retrieve contributo
-  formData = Object.assign(formData, retrieveContributo());
+  // assign contributo
+  formData["contributo"] = contributo;
   console.log(formData);
   return { data: formData };
 }

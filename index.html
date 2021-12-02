@@ -96,10 +96,11 @@
               <form
                 id="checkout-form"
                 method="POST"
-                action="https://script.google.com/macros/s/AKfycbxEvJfRD2EIvWJLgwuVo6V9QmohT8OBZVeiZAGcYiSP-NS8mi9lX884DyXfl2cl3o3h/exec"
+                action="https://script.google.com/macros/s/AKfycbwFZl5arFULzC5qVPoCHKefR4wiwlAn0eXsX4I4txL5d7l98g9PcV7ixYb4GX7zVPXU/exec"
               >
                 <div class="container mb-3">
                   <div class="form-elements">
+                    <div class="row mb-3"><span class="col-auto me-auto">Contributo inserito:</span><span class="col-auto contr-form">0</span></div>
                     <div class="row mb-3">
                       <label for="email" class="col-sm-2 col-form-label">Email</label>
                       <div class="col-sm-10">
@@ -117,17 +118,14 @@
                       <textarea class="form-control" id="messaggio" name="messaggio" rows="3" placeholder="Scrivi qualcosa..."></textarea>
                     </div>
                     <div class="row mb-3">
+                      <label for="radio-bonifico" class="form-label">Metodo:</label>
                       <div class="form-check">
                         <input class="form-check-input" type="radio" name="metodo" id="radio-bonifico" value="bonifico" checked />
                         <label class="form-check-label" for="radio-bonifico"> Bonifico </label>
                       </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="metodo" id="radio-paypal" value="paypal" />
-                        <label class="form-check-label" for="radio-paypal"> Paypal </label>
-                      </div>
                     </div>
                     <div class="confirm-body" style="display: none">
-                      Hai scelto di utilizzare <span class="method-confirm" style="font-style: italic">Bonifico</span>. Vuoi continuare? <br />
+                      Sei sicuro di voler continuare? <br />
                       Così facendo confermerai la tua scelta!
                     </div>
                   </div>
@@ -135,14 +133,13 @@
               </form>
               <div class="container thankyou_message py-2" style="display: none">
                 Vi ringrazio per il vostro contributo! <br />
-                Un'email di conferma vi arriverà all'indirizzo inserito. <br />
-                Avete scelto di pagare tramite <span class="method-confirm">Bonifico</span>.
+                Un'email di conferma vi arriverà all'indirizzo inserito.
                 <div class="scelta-box">
                   <div class="container scelta-bonifico py-3">
                     Ecco le coordinate bancarie: <br />
                     <div class="text-center">
-                      Intestato a: Piccaluga Iacopo <br />
-                      IBAN: XXXXXXXXXXXXXX
+                      Intestato a: Lazzaroni Michela <br />
+                      IBAN: IT49S3608105138236166636171
                     </div>
                   </div>
                   <div class="container scelta-paypal py-3" style="display: none">
@@ -160,7 +157,7 @@
                   class="btn btn-ricom"
                   data-bs-dismiss="modal"
                   data-bs-toggle="modal"
-                  data-bs-target="#my-cart-modal"
+                  data-bs-target="#contributo-modal"
                 >
                   Indietro
                 </button>
